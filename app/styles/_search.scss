@@ -1,0 +1,61 @@
+@use 'variables' as v;
+
+.search-bar {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: v.$text-tertiary;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  background: v.$bg-input;
+  border: 1px solid v.$border;
+  border-radius: v.$radius-md;
+  padding: 13px 16px 13px 44px;
+  font-family: v.$font-body;
+  font-size: 14px;
+  color: v.$text-primary;
+  outline: none;
+  transition: border-color v.$transition, box-shadow v.$transition;
+
+  &::placeholder {
+    color: v.$text-tertiary;
+  }
+
+  &:focus {
+    border-color: v.$accent;
+    box-shadow: 0 0 0 3px v.$accent-soft;
+  }
+}
+
+.search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: v.$bg-hover;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  color: v.$text-tertiary;
+  cursor: pointer;
+  transition: color v.$transition;
+
+  &:hover {
+    color: v.$text-primary;
+  }
+}

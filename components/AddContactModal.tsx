@@ -65,7 +65,6 @@ export function AddContactModal({ onClose, onAdd }: Props) {
       >
         <motion.div
           className="modal"
-          variants={modalVariants}
           initial="hidden"
           animate="visible"
           exit="exit"

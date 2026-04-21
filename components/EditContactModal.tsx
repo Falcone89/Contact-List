@@ -66,7 +66,6 @@ export function EditContactModal({ contact, onClose, onSave }: Props) {
       >
         <motion.div
           className="modal"
-          variants={modalVariants}
           initial="hidden"
           animate="visible"
           exit="exit"

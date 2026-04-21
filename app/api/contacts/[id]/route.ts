@@ -4,11 +4,13 @@ import { getDb } from '@/lib/db'
 // Edit Contact
 export async function PATCH(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: rawId } = await params;
+    const id = parseInt(rawId);
+    
     const db = getDb()
-    const id = parseInt(params.id)
     const body = await req.json()
 
     if (body.toggle === 'favorite') {
@@ -45,11 +47,13 @@ export async function PATCH(
 // Delete Contact
 export async function DELETE(
   _req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id: rawId } = await params;
+    const id = parseInt(rawId);
+    
     const db = getDb()
-    const id = parseInt(params.id)
     db.prepare('DELETE FROM contacts WHERE id = ?').run(id)
     return NextResponse.json({ success: true })
   } catch (e) {
