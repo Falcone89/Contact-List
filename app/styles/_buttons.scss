@@ -1,0 +1,90 @@
+@use 'variables' as v;
+
+/*
+ * Buttons
+ */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  font-family: v.$font-body;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-primary);
+  border-radius: v.$radius-sm;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: background v.$transition;
+
+  &:hover {
+    background: var(--g-90);
+  }
+
+  &:active {
+    background: var(--g-80);
+  }
+
+  // Primary Button
+  &-primary {
+    background: var(--g-60);
+
+    &:hover {
+      background: var(--g-50);
+    }
+
+    &:active {
+      background: var(--g-40);
+    }
+  }
+
+  // Special Button
+  &-special {
+
+    background: 
+      linear-gradient(to bottom, rgba(var(--g-60-rgb), 0.7) 0%, rgba(var(--g-60-rgb), 1) 100%) padding-box,
+      linear-gradient(to bottom, var(--g-20), transparent) border-box;
+    border-radius: 1000px;
+
+    &:hover {
+      background: 
+      linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box,
+      linear-gradient(to bottom, rgba(var(--g-60-rgb), 0.7) 0%, rgba(var(--g-60-rgb), 1) 100%) padding-box,
+      linear-gradient(to bottom, var(--g-20), transparent) border-box;
+    }
+
+    &:active {
+      background: 
+      linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box,
+      linear-gradient(to bottom, rgba(var(--g-60-rgb), 0.7) 0%, rgba(var(--g-60-rgb), 1) 100%) padding-box,
+      linear-gradient(to bottom, var(--g-20), transparent) border-box;
+    }
+  }
+
+  // Button with Icon
+  &:has(svg) {
+    padding: 0 15px 0 12px;
+  }
+
+  // Icon Only Button
+  &-icon {
+    width: 40px;
+    padding: 0 !important;
+  }
+
+  // Disabled State
+  &:disabled, &-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Inactive State
+  &.inactive {
+    opacity: 0.4;
+  }
+}

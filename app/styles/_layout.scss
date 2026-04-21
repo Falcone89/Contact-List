@@ -1,0 +1,78 @@
+@use 'variables' as v;
+
+/*
+ * App Layout
+ */
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.app-container {
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  border-left: 1px solid var(--g-60);
+  border-right: 1px solid var(--g-60);
+
+  &-full {
+    flex-grow: 1;
+  }
+}
+
+.app-topline {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-height: 47px;
+}
+
+.topline-header {
+  justify-content: space-between;
+}
+
+// Divider Line
+.app-divider {
+  height: 1px;
+  background: var(--g-60);
+  margin: 0;
+}
+
+/*
+ * Header
+ */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 23px 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.profile-nav {
+  .profile-portrait {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,75 @@
+@use 'variables' as v;
+
+/*
+ * Form
+ */
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1%;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--g-80);
+  border: 1px solid var(--g-60);
+  border-radius: v.$radius-sm;
+  padding: 10px 15px;
+  font-family: v.$font-body;
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+  transition: background v.$transition, border-color v.$transition;
+
+  &::placeholder {
+    color: v.$text-tertiary;
+  }
+
+  &:hover {
+    border-color: v.$g-30;
+  }
+
+  &:focus {
+    background: var(--g-60);
+    border-color: v.$g-10;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover, 
+  &:-webkit-autofill:focus {
+    transition: background-color 600000s ease-in-out 0s, 
+                border-color 600000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    background-color: var(--g-80) !important;
+    border-color: var(--g-60) !important;
+    caret-color: var(--text-primary);
+  }
+}
+
+/*
+ * Picture Frame
+ */
+
+.picture-section {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.picture-frame {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid v.$g-70;
+  flex-shrink: 0;
+}

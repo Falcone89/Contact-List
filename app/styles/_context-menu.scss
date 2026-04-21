@@ -1,0 +1,45 @@
+@use 'variables' as v;
+
+/*
+ * Context Menu
+ */
+
+.context-menu-wrap {
+  position: relative;
+}
+
+.context-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  background: var(--g-80);
+  border-radius: v.$radius-sm;
+  min-width: 170px;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.context-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  font-family: v.$font-body;
+  font-size: 14px;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+  transition: background v.$transition;
+
+  &:hover {
+    background: var(--g-70);
+  }
+
+  svg {
+    fill: var(--text-secondary) !important;
+  }
+
+}

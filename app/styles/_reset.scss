@@ -1,0 +1,29 @@
+@use 'variables' as v;
+
+/*
+ * Reset
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: v.$font-body;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1%;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+svg {
+  fill: var(--text-primary);
+}
